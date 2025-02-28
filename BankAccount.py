@@ -8,7 +8,10 @@ class BankAccount:
         self.__balance += amount
     
     def withdraw(self, amount):
-        self.__balance -= amount
+        if self.__balance >= amount:
+            self.__balance -= amount
+        else:
+            print("Saldo anda tidak cukup")
     
     def check_balance(self):
         print(f"Sisa Saldo adalah: {self.__balance}")
